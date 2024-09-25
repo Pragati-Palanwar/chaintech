@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced Web Page</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <header>
+        <h1>Welcome to My Enhanced Web Page</h1>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/submissions">Submissions</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="dynamic-info">
+            <div class="info-box">
+                <h3>Current Date and Time</h3>
+                <p>{{ time }}</p>
+            </div>
+            <div class="info-box">
+                <h3>Quote of the Day</h3>
+                <blockquote>"{{ quote }}"</blockquote>
+            </div>
+            {% if weather %}
+            <div class="info-box weather">
+                <h3>Weather in {{ weather.city }}</h3>
+                <p><img src="http://openweathermap.org/img/w/{{ weather.icon }}.png" alt="Weather icon"> {{
+                    weather.description }} - {{ weather.temperature }}&deg;C</p>
+            </div>
+            {% endif %}
+        </div>
+
+        <h2>Contact Us</h2>
+        <form action="/submit" method="POST">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required><br><br>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required><br><br>
+            <input type="submit" value="Submit">
+        </form>
+    </main>
+
+    <footer>
+        <p>Contact us at info@example.com</p>
+    </footer>
+</body>
+
+</html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced Web Page</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <header>
+        <h1>Welcome to My Enhanced Web Page</h1>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/submissions">Submissions</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="dynamic-info">
+            <div class="info-box">
+                <h3>Current Date and Time</h3>
+                <p>{{ time }}</p>
+            </div>
+            <div class="info-box">
+                <h3>Quote of the Day</h3>
+                <blockquote>"{{ quote }}"</blockquote>
+            </div>
+            {% if weather %}
+            <div class="info-box weather">
+                <h3>Weather in {{ weather.city }}</h3>
+                <p><img src="http://openweathermap.org/img/w/{{ weather.icon }}.png" alt="Weather icon"> {{
+                    weather.description }} - {{ weather.temperature }}&deg;C</p>
+            </div>
+            {% endif %}
+        </div>
+
+        <h2>Contact Us</h2>
+        <form action="/submit" method="POST">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required><br><br>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required><br><br>
+            <input type="submit" value="Submit">
+        </form>
+    </main>
+
+    <footer>
+        <p>Contact us at info@example.com</p>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submissions</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <header>
+        <h1>Submissions</h1>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/submissions">Submissions</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Submitted Data</h2>
+        <ul class="submissions-list">
+            {% for submission in submissions %}
+            <li class="submission-item">
+                <strong>Name:</strong> {{ submission.name }}<br>
+                <strong>Email:</strong> {{ submission.email }}
+            </li>
+            {% endfor %}
+        </ul>
+        <a href="/" class="button">Go Back to Home</a>
+    </main>
+
+    <footer>
+        <p>Contact us at info@example.com</p>
+    </footer>
+</body>
+
+</html>
